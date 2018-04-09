@@ -25,16 +25,15 @@
  *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package com.pixelduke.control.ribbon;
 
 import javafx.scene.layout.VBox;
 
-public class Column extends VBox{
+public class Column extends VBox {
+
     private final static String DEFAULT_STYLE_CLASS = "column";
 
-    public Column()
-    {
+    public Column() {
         getStyleClass().setAll(DEFAULT_STYLE_CLASS);
     }
 

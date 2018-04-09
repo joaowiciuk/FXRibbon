@@ -25,7 +25,6 @@
  *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package com.pixelduke.control.ribbon;
 
 import impl.com.pixelduke.skin.ribbon.QuickAccessBarSkin;
@@ -36,26 +35,25 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 
 public class QuickAccessBar extends Control {
+
     private final static String DEFAULT_STYLE_CLASS = "quick-access-bar";
 
     private final ObservableList<Button> buttons;
     private final ObservableList<Button> rightButtons;
 
-    public QuickAccessBar()
-    {
+    public QuickAccessBar() {
         buttons = FXCollections.observableArrayList();
         rightButtons = FXCollections.observableArrayList();
 
         getStyleClass().setAll(DEFAULT_STYLE_CLASS);
     }
 
-    public ObservableList<Button> getButtons(){
+    public ObservableList<Button> getButtons() {
         return buttons;
     }
 
     //TODO: Clarify this..
-    public ObservableList<Button> getRightButtons()
-    {
+    public ObservableList<Button> getRightButtons() {
         return rightButtons;
     }
 

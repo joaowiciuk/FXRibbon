@@ -24,7 +24,6 @@
  *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package com.pixelduke.control.ribbon;
 
 import javafx.collections.FXCollections;
@@ -37,6 +36,7 @@ import java.util.List;
 
 public class RibbonTab extends Tab {
 //    public static final int CONTENT_HEIGHT = 70;
+
     private static final String DEFAULT_STYLE_CLASS = "ribbon-tab";
 
     private HBox content;
@@ -45,13 +45,11 @@ public class RibbonTab extends Tab {
 
     private String contextualColor;
 
-    public RibbonTab()
-    {
+    public RibbonTab() {
         init();
     }
 
-    public RibbonTab(String title)
-    {
+    public RibbonTab(String title) {
         super(title);
         init();
     }
@@ -66,8 +64,9 @@ public class RibbonTab extends Tab {
 
         ribbonGroups.addListener(this::groupsChanged);
         content.getStyleClass().setAll(DEFAULT_STYLE_CLASS, "tab");
-        getStyleClass().addListener((ListChangeListener<String>) c -> {
-            while(c.next())
+        getStyleClass().addListener((ListChangeListener<String>) c ->
+        {
+            while (c.next())
             {
                 if (c.wasAdded())
                 {
@@ -81,31 +80,31 @@ public class RibbonTab extends Tab {
 
     }
 
-    public void setContextualColor(String color)
-    {
+    public void setContextualColor(String color) {
         contextualColor = color;
         getStyleClass().add(color);
     }
 
-    public String getContextualColor()
-    {
+    public String getContextualColor() {
         return contextualColor;
     }
 
     private void groupsChanged(ListChangeListener.Change<? extends RibbonGroup> changed) {
-        while(changed.next())
+        while (changed.next())
         {
             if (changed.wasAdded())
             {
                 updateAddedGroups(changed.getAddedSubList());
             }
-            if(changed.wasRemoved())
+            if (changed.wasRemoved())
             {
                 for (RibbonGroup group : changed.getRemoved())
                 {
                     int groupIndex = content.getChildren().indexOf(group);
                     if (groupIndex != 0)
+                    {
                         content.getChildren().remove(groupIndex - 1); // Remove separator
+                    }
                     content.getChildren().remove(group);
 
                 }
@@ -121,9 +120,7 @@ public class RibbonTab extends Tab {
         }
     }
 
-
-    public ObservableList<RibbonGroup> getRibbonGroups()
-    {
+    public ObservableList<RibbonGroup> getRibbonGroups() {
         return ribbonGroups;
     }
 }

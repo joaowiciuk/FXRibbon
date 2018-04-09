@@ -24,7 +24,6 @@
  *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package com.pixelduke.control.ribbon;
 
 import impl.com.pixelduke.skin.ribbon.RibbonItemSkin;
@@ -37,14 +36,14 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 
 public class RibbonItem extends Control {
+
     private final static String DEFAULT_STYLE_CLASS = "ribbon-item";
 
     private final ObjectProperty<Node> graphic;
     private final StringProperty label;
     private final ObjectProperty<Node> item;
 
-    public RibbonItem()
-    {
+    public RibbonItem() {
         graphic = new SimpleObjectProperty<>();
         label = new SimpleStringProperty();
         item = new SimpleObjectProperty<>();
@@ -52,50 +51,39 @@ public class RibbonItem extends Control {
         getStyleClass().setAll(DEFAULT_STYLE_CLASS);
     }
 
-
-
-    public Node getGraphic()
-    {
+    public Node getGraphic() {
         return graphic.get();
     }
 
-    public void setGraphic(Node graphic)
-    {
+    public void setGraphic(Node graphic) {
         this.graphic.set(graphic);
     }
 
-    public ObjectProperty graphicProperty()
-    {
+    public ObjectProperty graphicProperty() {
         return graphic;
     }
 
-    public String getLabel()
-    {
+    public String getLabel() {
         return label.get();
     }
 
-    public void setLabel(String label)
-    {
+    public void setLabel(String label) {
         this.label.set(label);
     }
 
-    public StringProperty labelPropery()
-    {
+    public StringProperty labelPropery() {
         return label;
     }
 
-    public void setItem(Node item)
-    {
+    public void setItem(Node item) {
         this.item.set(item);
     }
 
-    public Node getItem()
-    {
+    public Node getItem() {
         return item.get();
     }
 
-    public ObjectProperty itemProperty()
-    {
+    public ObjectProperty itemProperty() {
         return item;
     }
 
